@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/css" href="main.css" rel="stylesheet"/>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img src="download.jpg"><h1 id="header">Файловое хранилище v 0.01</h1><img src="download.jpg">
+  </header>
+  <hr />
+  <p class="align-right">Вы вошли в систему как Иванов Иван Иванович. <a href="#">Выйти</a></p>
+  <div id="container">
+
+    <div id="first-div">
+      <p><b>Можно загружать:</b></p>
+      <p>ZIP (до 20 Mb)</p>
+      <p>DOCX (до 40 Mb)</p>
+      <p>PPTX (до 50 Mb)</p>
+      <br />
+      <p><b>Использовано:</b></p>
+      <p>27.34 Mb из 100.00 Mb</p>
+    </div>
+
+    <div id="central-div">
+
+      <table>
+        <thead>
+          <th>Файл</th>
+          <th>Размер (Kb)</th>
+          <th>Дата и время</th>
+          <th>Удалить</th>
+        </thead>
+        <tr>
+          <td>Архив</td>
+          <td>123</td>
+          <td>2014.02.18 18:01:15</td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+        <tr>
+          <td>AnotherOne</td>
+          <td>552</td>
+          <td>2014.05.18 18:01:15</td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+        <tr>
+          <td>First</td>
+          <td>32</td>
+          <td>2014.03.18 18:01:15</td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+        <tr>
+          <td>Последний</td>
+          <td>999</td>
+          <td>2014.04.18 18:01:15</td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+      </table>
+
+      <form id="upload-form" method="POST">
+        <p>Загрузить новый файл:</p>
+        <div class="file_upload">
+          <button type="button">Выбрать</button>
+          <div>&nbsp;</div>
+          <input type="file">
+        </div>
+        <input id="upload" type="button" value="Загрузить">
+      </form>
+
+      <form id="request-form" method="POST">
+        <label>Запросить с удаленного сервера:</label>
+        <input type="text" name="remote" id="remote"/>
+        <label for="put">Поместить в хранилище:</label>
+        <input id="put" type="checkbox"><br />
+        <input id="request" type="button" value="Запросить">
+      </form>
+    </div>
+
+    <div id="statistics-div">
+      <p>
+        <b>Статистика:</b>
+      </p>
+      <p>Пользователей: 123</p>
+      <p>Файлов: 1234</p>
+      <p>Обьем: 522 Mb</p>
+      <p>Обьем / польз.: 45Mb</p>
+    </div>
+
+  </div>
+</body>
+</html>
