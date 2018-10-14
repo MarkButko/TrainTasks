@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <notebook>
+        <person>
+            <address>addr</address>
+            <cash>1000000</cash>
+            <education>sa</education>
+            <name>First</name>
+        </person>
+        <person>
+            <address>addr2</address>
+            <cash>1000</cash>
+            <education>sa</education>
+            <name>Second</name>
+        </person>
+        <person>
+            <address>addr3</address>
+            <cash>9999999</cash>
+            <education>sa</education>
+            <name>Third</name>
+        </person>
+    </notebook>
+</catalog>
