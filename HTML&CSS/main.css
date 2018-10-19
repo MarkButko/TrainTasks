@@ -3,13 +3,8 @@ img {
   height: auto;
 }
 
-#header {
-  display: inline;
-  vertical-align: top;
-}
-
 label {
-  width: 35%;
+  width: 42%;
   display: inline-block;
   text-align: right;
 }
@@ -39,6 +34,12 @@ table {
 
 th, td {
     border-bottom: 1px solid #ddd;
+}
+
+.error {
+  display: none;
+  margin: auto;
+  text-align: center;
 }
 
 .align-right {
@@ -73,6 +74,11 @@ th, td {
   transform: scale(10);
   opacity: 0;
   cursor: pointer
+}
+
+#header {
+  display: inline;
+  vertical-align: top;
 }
 
 #container {

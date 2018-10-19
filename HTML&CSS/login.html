@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link type="text/css" href="main.css" rel="stylesheet"/>
+  <script src="regex.js" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -21,9 +22,9 @@
     <div id="central-div">
       <form id="login-form" method="POST">
         <label for="login">Логин</label>
-        <input id="login" type="text"><br />
+        <input id="login" type="text" placeholder="Email"><p class="error"></p>
         <label for="password">Пароль</label>
-        <input id="password" type="text"><br />
+        <input id="password" type="text" placeholder="Password"><p class="error"></p>
         <label for="remember">Запомнить</label>
         <input id="remember" type="checkbox"><br />
         <label for="enter"></label>
