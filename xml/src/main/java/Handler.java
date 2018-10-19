@@ -15,9 +15,9 @@ public class Handler extends DefaultHandler {
     private List<Person> persons = null;
     private Person person = null;
 
-    boolean bName;
-    boolean bCash;
-    boolean bAddress;
+    private boolean bName;
+    private boolean bCash;
+    private boolean bAddress;
 
     public Handler() {
         super();
@@ -44,7 +44,7 @@ public class Handler extends DefaultHandler {
                 bAddress = true;
                 break;
             case NAME:
-                bAddress = true;
+                bName = true;
                 break;
         }
 
