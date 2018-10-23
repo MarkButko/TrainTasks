@@ -12,35 +12,40 @@ import java.util.Optional;
 @Transactional
 public class PosessionService {
 
-    private PosessionRepository PosessionRepository;
+    private PosessionRepository posessionRepository;
 
     @Transactional
-    public Posession save(Posession Posession){
-        return PosessionRepository.save(Posession);
+    public Posession save(Posession posession){
+        return posessionRepository.save(posession);
     }
 
     @Transactional(readOnly=true)
     public Optional<Posession> findById(Long id){
-        return PosessionRepository.findById(id);
+        return posessionRepository.findById(id);
     }
 
     @Transactional(readOnly=true)
     public List<Posession> findAll() {
-        return  PosessionRepository.findAll();
+        return  posessionRepository.findAll();
+    }
+
+    @Transactional(readOnly=true)
+    public List<Posession> findAllByUserId(Long userId) {
+        return  posessionRepository.findByUserId(userId);
     }
 
     @Transactional
     public  void deleteById(Long id) {
-        PosessionRepository.deleteById(id);
+        posessionRepository.deleteById(id);
     }
 
     @Transactional
     public void delete(Posession Posession) {
-        PosessionRepository.delete(Posession);
+        posessionRepository.delete(Posession);
     }
 
     @Transactional
     public  void deleteAll() {
-        PosessionRepository.deleteAll();
+        posessionRepository.deleteAll();
     }
 }

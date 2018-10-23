@@ -54,10 +54,11 @@
     <jpa:repositories base-package="spring.rest.model" entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
 
     <bean id="userService" class="spring.rest.model.service.UserService"/>
-    <bean id="posessionService" class="spring.rest.model.service.PosessionService" autowire="byType"/>
+    <bean id="posessionService" class="spring.rest.model.service.PosessionService"/>
 
     <bean id="initData" class="spring.rest.TestDataInitializer" init-method="init">
         <property name="userService" ref="userService"/>
+        <property name="posessionService" ref="posessionService"/>
     </bean>
 
     <context:component-scan base-package="spring.rest"/>

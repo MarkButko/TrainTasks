@@ -3,7 +3,9 @@ package spring.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import spring.rest.model.entity.Posession;
 import spring.rest.model.entity.User;
+import spring.rest.model.service.PosessionService;
 import spring.rest.model.service.UserService;
 
 import java.util.List;
@@ -13,6 +15,9 @@ public class Controller {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    PosessionService posessionService;
 
     public Controller() {
         System.out.println("controller");
@@ -45,5 +50,11 @@ public class Controller {
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteById(id);
+    }
+
+    @GetMapping( "/users/{id}/pos")
+    public List<Posession> getUserPosessions(@PathVariable Long id) {
+        System.out.println("Find users pos");
+        return posessionService.findAllByUserId(id);
     }
 }
