@@ -12,7 +12,7 @@ public class TestDataInitializer {
     public void init() {
         System.out.println("User Service = " + userService);
         for (int i = 0; i < 5; i++) {
-            userService.save(
+            userService.saveOrUpdate(
                     User.builder()
                         .name("Name_" + i)
                         .age(i)

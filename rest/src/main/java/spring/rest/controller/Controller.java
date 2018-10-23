@@ -8,7 +8,7 @@ import spring.rest.model.service.UserService;
 
 import java.util.List;
 
-@RestController("/")
+@RestController
 public class Controller {
 
     @Autowired
@@ -18,18 +18,32 @@ public class Controller {
         System.out.println("controller");
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @GetMapping( "/users/{id}")
+    public User getUser(@PathVariable Long id) {
+        return userService.findById(id).orElse(null);
+    }
+
+    @GetMapping("/users")
     public List<User> getUsers() {
         return userService.findAll();
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test() {
-        return "String";
+    @PostMapping("/users")
+    public User addUser(@RequestBody User user) {
+        return userService.saveOrUpdate(user);
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public User addUser(@RequestBody User user) {
-        return userService.save(user);
+    @PutMapping("/users/{id}")
+    public User updateUser(@RequestBody User user, @PathVariable Long id) {
+        if (userService.existsById(id)) {
+            return userService.saveOrUpdate(user);
+        } else {
+          return null;
+        }
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteById(id);
     }
 }

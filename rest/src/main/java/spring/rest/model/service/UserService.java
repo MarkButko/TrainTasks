@@ -21,7 +21,7 @@ public class UserService {
     }
 
     @Transactional
-    public User save(User User){
+    public User saveOrUpdate(User User){
         System.out.println("UserRepository = " + userRepository);
          return userRepository.save(User);
     }
@@ -34,6 +34,11 @@ public class UserService {
     @Transactional(readOnly = true)
     public List<User> findAll() {
         return  userRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public Boolean existsById(Long id) {
+        return  userRepository.existsById(id);
     }
 
     @Transactional
