@@ -11,6 +11,7 @@ import spring.rest.model.service.UserService;
 import java.util.List;
 
 @RestController
+@RequestMapping("users")
 public class Controller {
 
     @Autowired
@@ -23,22 +24,22 @@ public class Controller {
         System.out.println("controller");
     }
 
-    @GetMapping( "/users/{id}")
+    @GetMapping( "/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.findById(id).orElse(null);
     }
 
-    @GetMapping("/users")
+    @GetMapping
     public List<User> getUsers() {
         return userService.findAll();
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public User addUser(@RequestBody User user) {
         return userService.saveOrUpdate(user);
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/{id}")
     public User updateUser(@RequestBody User user, @PathVariable Long id) {
         if (userService.existsById(id)) {
             return userService.saveOrUpdate(user);
@@ -47,12 +48,12 @@ public class Controller {
         }
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteById(id);
     }
 
-    @GetMapping( "/users/{id}/pos")
+    @GetMapping( "/{id}/pos")
     public List<Posession> getUserPosessions(@PathVariable Long id) {
         System.out.println("Find users pos");
         return posessionService.findAllByUserId(id);

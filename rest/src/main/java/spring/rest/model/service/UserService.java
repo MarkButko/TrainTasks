@@ -9,7 +9,6 @@ import spring.rest.model.entity.User;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
 @Transactional
 public class UserService {
 
